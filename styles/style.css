@@ -13,70 +13,64 @@
 .page {
   min-inline-size: 320px;
   min-block-size: 100dvb;
-  font-family: var(--main_font), sans-serif;
-  font-variation-settings: "wght" var(--text_regular);
-  background-image: var(--gradient_fon);
-  background-size: cover;
-  min-height: 960px;
+  font-family: var(--font-family-main), sans-serif;
+  font-variation-settings: "wght" var(--font-weight-regular);
+  background-image: var(--background-gradient);
+  background-size: auto;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
 }
 
 .header {
+  margin: 100px auto 0;
+  border: var(--border-main);
+  inline-size: var(--size-block-width);
+  background-color: var(--color-background);
+  font-family: var(--font-family-accent);
+  font-weight: var(--font-weight-accent-regular);
+}
+
+.header_block {
   display: flex;
   flex-direction: column;
-  justify-content: center;
   align-items: center;
-  margin: 100px auto 0;
-  border: var(--main_border);
-  inline-size: var(--width_block);
-  background-color: var(--color_fon);
-  min-height: 368px;
-  font-family: var(--accent_font);
+  gap: 20px;
+  padding: 130px 122px;
 }
 
 .header_title {
-  font-size: var(--title_size);
-  font-weight: var(--accent_weight);
+  font-size: var(--font-size-title);
+  font-weight: var(--font-weight-accent-regular);
 }
 
 .header_subtitle {
-  margin-top: 20px;
-  font-size: var(--sub_title);
+  font-size: var(--font-size-subtitle);
   text-transform: uppercase;
-  font-weight: var(--accent_weight);
 }
 
 main {
-  margin-top: 100px;
+  margin-top: 94px;
   margin-bottom: 20px;
-}
-
-.list {
   display: flex;
   flex-direction: column;
   align-items: center;
-  row-gap: 50px;
+  gap: 51px;
 }
 
 .card {
-  display: flex;
-  flex-direction: column;
-  background-color: var(--color_fon);
-  inline-size: var(--width_block);
-  height: 100%;
-  min-height: 956px;
-  border: var(--main_border);
-  font-size: var(--text_size);
+  background-color: var(--color-background);
+  inline-size: var(--size-block-width);
+  border: var(--border-main);
+  font-size: var(--font-size-text);
 }
 
 .card_title {
-  font-variation-settings: "wght" var(--text_bold);
-  padding: 3px 10px;
-  max-height: 30px;
-  font-size: var(--text_size);
+  padding: 4px 10px;
+  font-variation-settings: "wght" var(--font-weight-main-bold);
+  font-size: var(--font-size-text);
 }
 
 .card_img_container {
-  margin-top: 1px;
   position: relative;
   overflow: hidden;
 }
@@ -94,17 +88,18 @@ main {
   right: 25px;
   top: 25px;
   mix-blend-mode: hard-light;
-  font-size: 14px;
-  font-family: var(--accent_font);
-  font-weight: var(--accent_weight);
-  color: #000;
   opacity: 0.5;
   text-shadow: 0px 1px 0 #fff;
   text-transform: uppercase;
+  color: var(--color-accent);
+  font-size: var(--font-size-ui-elements);
+  font-family: var(--font-family-accent);
+  font-weight: var(--font-weight-accent-regular);
 }
 
 @supports (-webkit-text-stroke: 1px #fff) {
   .img_label {
+    text-shadow: none;
     -webkit-text-stroke: 1px #fff;
   }
 }
@@ -112,63 +107,67 @@ main {
 .card_text {
   display: flex;
   flex-direction: column;
-  margin: 25px auto 0;
+  margin: 25px;
   row-gap: 25px;
   width: clamp(321px, 100%, 646px);
-  font-weight: var(--text_regular);
+  font-weight: var(--font-weight-main-regular);
+  line-height: 117%;
 }
 
 .card__button {
   display: flex;
-  gap: 6px;
   justify-content: end;
-  margin: 26px 25px 25px 0;
+  align-items: center;
+  gap: 6px;
+  margin: 25px;
   transition: 0.3s ease;
+  font-family: var(--font-family-accent);
 }
 
 .card__icon-button {
   display: flex;
-    align-items: center;
+  align-items: center;
   border: none;
-  background-color: var(--color_fon);
+  color: red;
   cursor: pointer;
   padding: 0;
-  transition: 0.3s ease 
+  transition: 0.3s ease;
+  background-color: var(--color-background);
 }
 
 .card__like-button {
   position: relative;
-  border: var(--main_border);
-  background-color: var(--color_fon);
+  border: var(--border-main);
+  background-color: var(--color-background);
   overflow: hidden;
   cursor: pointer;
-  width: 100%;
+  padding: 8px 0;
   max-width: 130px;
-  padding: 7px 0px;
-  transition: 0.3s ease
+  width: 100%;
+  transition: 0.3s ease;
 }
 
 .button__text {
-  color: var(--accent_color);
-  font-family: var(--accent_font);
-  font-size: 14px;
+  color: var(--color-accent);
+  font-size: var(--font-size-ui-elements);
+  line-height: 90%;
 }
 
 .button_floppy {
+  margin-top: -2px;
   display: flex;
   position: relative;
-  margin: 50px auto 0;
-  padding: 15px 18px;
-  gap: 8px;
   align-items: center;
-  border: var(--main_border);
+  padding: 14px 18px;
+  gap: 8px;
   cursor: pointer;
-  font-family: var(--accent_font);
-  font-weight: var(--accent_weight);
-  font-size: 14px;
   overflow: hidden;
-  color: var(--accent_color);
-  background-color: var(--color_fon);
+  border: var(--border-main);
+  font-size: var(--font-size-ui-elements);
+  font-family: var(--font-family-accent);
+  font-weight: var(--font-weight-accent-regular);
+  color: var(--color-accent);
+  background-color: var(--color-background);
 }
 
 .button_floppy-icon {
@@ -176,49 +175,46 @@ main {
   height: auto;
 }
 
-#myModal {
-  font-family: var(--accent_font);
-  font-weight: var(--accent_weight);
-  font-size: 14px;
-  border: var(--main_border);
-  max-width: 353px;
-  width: 100%;
-  max-height: 191px;
-  height: 100%;
-  line-height: 150%;
+.modal_window {
+  padding: 0;
+  font-family: var(--font-family-accent);
+  font-size: var(--font-size-ui-elements);
+  font-weight: var(--font-weight-accent-regular);
   text-transform: uppercase;
-  padding: 28px;
-  overflow-y: hidden;
+  line-height: 150%;
 }
 
-#myModal .modal_icon {
+.modal_window div {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  margin: 30px;
+}
+
+.modal_icon {
   width: 39px;
   height: 39px;
 }
 
-#myModal span {
-  display: flex;
-  column-gap: 12px;
-  align-items: center;
-}
-
-#myModal p {
+.modal_window p {
   max-width: 234px;
+  width: 100%;
 }
 
 .button_close {
-  margin-top: 30px;
   position: relative;
   overflow: hidden;
-  background-color: transparent;
-  text-transform: uppercase;
   display: flex;
-  align-items: center;
+  margin: 0 auto 30px auto;
+  max-width: 293px;
   width: 100%;
+  background-color: var(--color-background);
+  border: var(--border-main);
   padding: 10px 0;
+  text-transform: uppercase;
 }
 
-#myModal::backdrop {
+.modal_window::backdrop {
   background-color: rgb(0 0 0 / 0.7);
   backdrop-filter: blur(7px);
 }
@@ -227,42 +223,59 @@ main {
   margin: 0 auto;
 }
 
-
 @media (width <= 375px) {
-  .header {
-    min-height: 327px;
+  .header_block {
+    padding: 120px 16px;
   }
 
-  .list {
-    gap: 49px;
-  }
-
-  .card {
-    min-height: 715px;
+  main {
+    margin-top: 100px;
+    gap: 48px;
   }
 
   .card_title {
-    max-height: none;
     padding: 5px 10px;
+    border-bottom: 2px solid black;
   }
 
   .card_text {
-    padding: 0 25px;
-    margin: 25px auto 0;
+    margin: 0;
+    padding: 25px;
   }
 
   .card__button {
-    margin: 25px 25px 25px 0;
+    margin: 0;
+    padding: 0 25px 25px 25px;
   }
-  
+
   .button_floppy {
+    margin: 2px;
     flex-direction: column;
+    gap: 11px;
+  }
+
+  .modal_window {
+    width: 100%;
+    max-width: 341px;
   }
 
   .button_floppy-icon {
-    width: 28px;
+    width: 39px;
+    height: 39px;
   }
 
+  .modal_window div {
+    margin: 30px 36px;
+    gap: 20px;
+  }
+
+  .modal_window p {
+    max-width: 202px;
+  }
+
+  .button_close {
+    max-width: 261px;
+  }
 }
 
 /* Animation, Focus, Hover effect */
@@ -272,7 +285,7 @@ main {
 }
 
 .card__icon-button:focus-visible {
-  outline: var(--main_border);
+  outline: var(--border-main);
 }
 
 .card__like-button:focus {
@@ -280,18 +293,18 @@ main {
 }
 
 .card__like-button:focus-visible {
-  box-shadow: 2px 2px 0 var(--accent_color);
+  box-shadow: 2px 2px 0 var(--color-accent);
 }
 
 .button_floppy:focus {
   outline: none;
-  box-shadow: 2px 2px 0 var(--accent_color);
+  box-shadow: 2px 2px 0 var(--color-accent);
 }
 
 .button_close:focus {
   outline: none;
-  box-shadow: 2px 2px 0 var(--accent_color);
-} 
+  box-shadow: 2px 2px 0 var(--color-accent);
+}
 
 .animation_button::before {
   content: "";
@@ -300,7 +313,7 @@ main {
   left: -100%;
   width: 100%;
   height: 100%;
-  background-color: var(--color_fon);
+  background-color: var(--color-background);
   mix-blend-mode: difference;
   transition: 0.5s ease-in-out;
 }
@@ -309,96 +322,91 @@ main {
   left: 0;
 }
 
-.contour:default {
-  transition: fill 0.1s linear 0s;
+.contour {
+  color: var(--animation-color-contour);
+  transition: fill 0.1s linear;
 }
 
-.main-body:default {
-  transition: fill 0.3s linear 0s;
+.main-body {
+  color: var(--animation-color-main-body);
+  transition: fill 0.3s linear;
 }
 
-.core:default {
-  transition:  fill 0.3s linear 0.03s;
+.core {
+  color: var(--animation-color-core);
+  transition: fill 0.3s linear 0.03s;
 }
 
 .like-icon:hover .main-body {
-  --animation-main-body-color: black;
-  transition: fill 0.3s linear 0.5s;
+  --animation-color-main-body: black;
+  transition: fill 0.3s linear 0.05s;
 }
 
 .like-icon:hover .core {
-  --animation-core-color: black;
-  transition: fill 0.3s linear  0.4s;
+  --animation-color-core: black;
+  transition: fill 0.3s linear 0s;
 }
 
 .like-icon:active .main-body {
-  --animation-main-body-color: #FF0000;
-  transition: fill 0.3s linear 0.3s;
+  --animation-color-main-body: #ff0000;
+  transition: fill 0.3s linear 0.05s;
 }
 
 .like-icon:active .core {
-  --animation-core-color: #FF0000;
-  transition: fill 0.3s linear  0s;
+  --animation-color-core: #ff0000;
+  transition: fill 0.3s linear 0s;
 }
 
 .like-icon.is-liked .core {
-  --animation-core-color: #FF0000;
-  transition: fill 0.3s linear 0.3s;
+  --animation-color-core: #ff0000;
+  transition: fill 0.3s linear 0s;
 }
 
 .like-icon.is-liked .main-body {
-  --animation-main-body-color: #FF0000;
-  transition: fill 0.3s linear 0.5s;
+  --animation-color-main-body: #ff0000;
+  transition: fill 0.3s linear 0.04s;
 }
 
+
 .like-icon.is-liked .contour {
-  --animation-contour-color: #FF0000;
+  --animation-color-contour: #ff0000;
   transition: fill 0.3s linear 0.06s;
 }
 
 .like-icon.is-liked .heart {
-  animation-name: heart_scale;
-  animation-duration: 0.3s;
-  animation-iteration-count: 1;
-  animation-timing-function: ease-in;
-  animation-delay: 0.1s;
-  transform-origin: center
+  animation: heart_scale 0.3s ease-in 0.1s 1;
+  transform-origin: center;
 }
 
 .like-icon.is-liked .sparks {
-  animation-name: sparks_active;
-  animation-duration: 0.3s;
-  animation-iteration-count: 1;
-  animation-timing-function: ease-in;
-  animation-delay: 0.3s;
+  animation: sparks_active 0.3s ease-in 0.3s 1;
 }
 
 /* Filter img */
-
-.card:nth-child(2) .card-img {
+.filter-saturate-20 {
   filter: saturate(20%);
 }
 
-.card:nth-child(3) .card-img {
+.filter-brightness-2 {
   filter: brightness(2) saturate(128%);
 }
 
-.card:nth-child(4) .card-img {
+.filter-contrast-200 {
   filter: contrast(200%);
 }
 
-.card:nth-child(5) .card-img {
+.filter-invert-80 {
   filter: invert(80%);
 }
 
-.card:nth-child(6) .card-img {
-  filter: sepia(80%);
+.filter-sepia-100 {
+  filter: sepia(100%);
 }
 
-.card:nth-child(7) .card-img {
-  filter: blur(10px);
+.filter-blur-3 {
+  filter: blur(3px);
 }
 
-.card:nth-child(8) .card-img {
-  filter: contrast(200%) saturate(128%);
+.filter-hue-rotate-180 {
+  filter: hue-rotate(180deg);
 }
